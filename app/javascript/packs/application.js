@@ -8,4 +8,17 @@
 // layout file, like app/views/layouts/application.html.erb
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hello from './hello_react';
+import Form from './Form';
+
+const component = <Form />;
+
+document.addEventListener('DOMContentLoaded', () => {
+  const dest = document.getElementById('content');
+
+  if (dest) {
+    ReactDOM.render(
+      component,
+      dest
+    );
+  }
+});
