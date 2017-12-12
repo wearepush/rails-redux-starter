@@ -8,9 +8,17 @@
 // layout file, like app/views/layouts/application.html.erb
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Form from './Form';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import App from './components/App/App.js';
+import reducer from './redux/reducer.js'
+let store = createStore(reducer);
 
-const component = <Form />;
+const component = (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
 
 document.addEventListener('DOMContentLoaded', () => {
   const dest = document.getElementById('content');
